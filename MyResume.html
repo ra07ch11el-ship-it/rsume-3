@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>詹雅晴｜個人履歷</title>
+
+<!-- PDF 產生工具 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        background: #f7f7f7;
+        padding: 40px;
+    }
+    .resume-container {
+        width: 800px;
+        margin: auto;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 5px;
+        color: #444;
+    }
+    h2 {
+        font-size: 22px;
+        margin-top: 30px;
+        color: #555;
+        border-left: 4px solid #b4c4d4;
+        padding-left: 10px;
+    }
+    p, li {
+        line-height: 1.8;
+        color: #333;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    .download-btn {
+        background: #6b8ea5;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .download-btn:hover {
+        opacity: 0.85;
+    }
+</style>
+</head>
+
+<body>
+
+<button class="download-btn" onclick="downloadPDF()">📄 下載 PDF 履歷</button>
+
+<div id="resume" class="resume-container">
+
+    <h1>詹雅晴 Jan Ya-Ching</h1>
+    <p>亞洲大學｜經營管理學系｜2025 入學</p>
+
+    <h2>個人簡介 Profile</h2>
+    <p>
+        個性細膩、擅長觀察市場趨勢，具備良好美感與簡報設計能力。
+        喜歡行銷、品牌策略與內容企劃，期望累積更多行銷與企劃相關經驗。
+    </p>
+
+    <h2>技能 Skills</h2>
+    <ul>
+        <li>行銷企劃撰寫 / Marketing Planning</li>
+        <li>市場調查與資料分析</li>
+        <li>簡報與版面設計（PowerPoint / Canva）</li>
+        <li>社群貼文企劃與排版</li>
+        <li>團隊協作與溝通能力</li>
+    </ul>
+
+    <h2>學歷 Education</h2>
+    <p>亞洲大學｜經營管理學系（2025 – 2029）</p>
+
+    <h2>校園經驗 Experience</h2>
+    <ul>
+        <li>迎新活動小組 — 文案與企劃撰寫</li>
+        <li>行銷策略課程專案 — 品牌企劃簡報</li>
+        <li>攝影社社員 — 影像後製與排版</li>
+    </ul>
+
+    <h2>聯絡方式 Contact</h2>
+    <p>Email：yourmail@example.com</p>
+    <p>電話：0912-345-678</p>
+    <p>居住地：新北市</p>
+
+</div>
+
+<script>
+function downloadPDF() {
+    const element = document.getElementById('resume');
+    const options = {
+        margin: 10,
+        filename: 'resume_jan_yachin.pdf',
+        html2canvas: { scale: 2 },
+        jsPDF: { format: 'a4' }
+    };
+    html2pdf().set(options).from(element).save();
+}
+</script>
+
+</body>
+</html>
